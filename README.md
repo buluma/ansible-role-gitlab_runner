@@ -1,10 +1,10 @@
-# [Ansible role gitlab_runner](#gitlab_runner)
+# Ansible role [gitlab_runner](https://galaxy.ansible.com/ui/standalone/roles/buluma/gitlab_runner/documentation)
 
 Install and configure gitlab-runner on your system.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-gitlab_runner/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-gitlab_runner/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-gitlab_runner.svg)](https://github.com/buluma/ansible-role-gitlab_runner/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-gitlab_runner.svg)](https://github.com/buluma/ansible-role-gitlab_runner/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-gitlab_runner.svg)](https://github.com/buluma/ansible-role-gitlab_runner/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-gitlab_runner/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-gitlab_runner/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-gitlab_runner.svg)](https://github.com/buluma/ansible-role-gitlab_runner/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-gitlab_runner.svg)](https://github.com/buluma/ansible-role-gitlab_runner/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-gitlab_runner.svg)](https://github.com/buluma/ansible-role-gitlab_runner/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/gitlab_runner)](https://galaxy.ansible.com/ui/standalone/roles/buluma/gitlab_runner/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -119,13 +119,11 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/buluma/ansible-role-gitlab_runner/blob/master/LICENSE).
+[Apache-2.0](https://github.com/buluma/ansible-role-gitlab_runner/blob/master/LICENSE)
 
 ## [Author Information](#author-information)
 
-[buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)
