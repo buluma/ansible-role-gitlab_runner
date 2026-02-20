@@ -1,0 +1,9 @@
+digraph PhiloDilemma {
+  label = "Michael Buluma" ;
+  overlap=false
+  {
+    "gitlab_runner" [fillcolor=yellow style=filled penwidth=3]
+    "buluma.bootstrap" [fillcolor=green style=filled]
+  }
+  "gitlab_runner" -> "buluma.bootstrap"
+}
