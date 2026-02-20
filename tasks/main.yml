@@ -61,7 +61,7 @@
 - name: Set concurrency in config.toml
   ansible.builtin.lineinfile:
     path: /etc/gitlab-runner/config.toml
-    regexp: '^concurrent = '
+    regexp: "^concurrent = "
     line: "concurrent = {{ gitlab_runner_concurrency }}"
     state: present
   notify:
