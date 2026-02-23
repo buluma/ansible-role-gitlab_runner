@@ -1,11 +1,11 @@
 ---
-  - name: Verify
-    hosts: all
-    become: true
-    gather_facts: false
+- name: Verify
+  hosts: all
+  become: true
+  gather_facts: false
 
-    tasks:
-      - name: Run version check
-        ansible.builtin.command:
-          cmd: gitlab-runner --version
-        changed_when: false
+  tasks:
+  - name: Run version check
+    ansible.builtin.command:
+      cmd: gitlab-runner --version
+    changed_when: false
