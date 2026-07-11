@@ -26,8 +26,7 @@ _gitlab_runner_requirements:
       - yum-utils
       - openssl
 
-gitlab_runner_requirements:
-  "{{ _gitlab_runner_requirements[ansible_facts['os_family']][ansible_facts['distribution_major_version']] | default(_gitlab_runner_requirements[ansible_facts['os_family']])
+gitlab_runner_requirements: "{{ _gitlab_runner_requirements[ansible_facts['os_family']][ansible_facts['distribution_major_version']] | default(_gitlab_runner_requirements[ansible_facts['os_family']])
   | default(_gitlab_runner_requirements['default']) }}"
 
 _gitlab_runner_package_type:
