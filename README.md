@@ -33,6 +33,13 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   become: true
   gather_facts: false
 
+  pre_tasks:
+    - name: Install sudo if missing
+      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo"
+      become: false
+      changed_when: false
+      failed_when: false
+
   roles:
     - role: buluma.bootstrap
 ```
@@ -51,7 +58,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # gitlab_runner_registration_token: "123ABC"
 
 # The name as shown in the GitLab webinterface.
-gitlab_runner_name: "{{ ansible_fqdn }}"
+gitlab_runner_name: "{{ ansible_facts['fqdn'] }}"
 
 # The URL to register the runner to.
 gitlab_runner_url: "https://gitlab.com/"
@@ -66,10 +73,10 @@ gitlab_runner_executor: docker
 gitlab_runner_docker_image: "alpine:latest"
 
 # The version of the GitLab runner to install.
-gitlab_runner_version: "16.3.1"
+gitlab_runner_version: ""
 
 # Set the amount of concurrent jobs.
-gitlab_runner_concurrency: "{{ ansible_processor_vcpus }}"
+gitlab_runner_concurrency: "{{ ansible_facts['processor_vcpus'] }}"
 
 # Activate or deactivate privileged runner
 gitlab_runner_privileged: true
@@ -97,12 +104,14 @@ Here is an overview of related roles:
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|all|
-|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done on:
 
@@ -120,6 +129,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 [buluma](https://buluma.github.io/)
 
-### Get Help
-- Report issues: https://github.com/buluma/ansible-role-gitlab_runner/issues/new
-- See docs: https://docs.ansible.com/collection/gallery/ansible-role-gitlab_runner
