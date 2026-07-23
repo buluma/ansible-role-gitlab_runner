@@ -25,9 +25,14 @@ _gitlab_runner_requirements:
       - curl-minimal
       - yum-utils
       - openssl
+    "10":
+      - curl-minimal
+      - yum-utils
+      - openssl
 
-gitlab_runner_requirements: "{{ _gitlab_runner_requirements[ansible_facts['os_family']][ansible_facts['distribution_major_version']] | default(_gitlab_runner_requirements[ansible_facts['os_family']])
-  | default(_gitlab_runner_requirements['default']) }}"
+gitlab_runner_requirements: "{{ (_gitlab_runner_requirements[ansible_facts['os_family']][ansible_facts['distribution_major_version']]
+  if _gitlab_runner_requirements[ansible_facts['os_family']] is mapping
+  else _gitlab_runner_requirements[ansible_facts['os_family']]) | default(_gitlab_runner_requirements['default']) }}"
 
 _gitlab_runner_package_type:
   Debian: deb
